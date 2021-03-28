@@ -27,6 +27,12 @@ public class OrderController {
 	
 	@Autowired
 	private OrderRepository orderRepository;
+
+	@Autowired
+	public OrderController(UserRepository userRepository, OrderRepository orderRepository) {
+		this.userRepository = userRepository;
+		this.orderRepository = orderRepository;
+	}
 	
 	
 	@PostMapping("/submit/{username}")
